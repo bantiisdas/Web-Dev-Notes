@@ -10,6 +10,10 @@ export const todoValidationSchema = z.object({
     .describe("completion status of the todo"),
 });
 
+export const todoIdParamSchema = todoValidationSchema.pick({
+  id: true,
+});
+
 export type Todo = z.infer<typeof todoValidationSchema>;
 
 // export interface ITodo {
